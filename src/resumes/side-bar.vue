@@ -8,80 +8,87 @@
             {{person.position}}
           </span>
       </div>
-      <div class="left-col">
-          <div class="person-image">
-              <div class="image-centerer">
-                  <div class="img"></div>
-              </div>
-          </div>
-          <div class="contact">
-              <h3>{{ lang.contact }}</h3>
-              <div class="contact-row">
-                  <a :href="contactLinks.email">{{person.contact.email}}</a>
-              </div>
-              <div class="contact-row dots">
-                  <i class="fa fa-circle" aria-hidden="true"></i>
-                  <i class="fa fa-circle" aria-hidden="true"></i>
-                  <i class="fa fa-circle" aria-hidden="true"></i>
-              </div>
-              <div class="contact-row">
-                  <a :href="contactLinks.phone">{{person.contact.phone}}</a>
-              </div>
-              <div class="contact-row dots">
-                  <i class="fa fa-circle" aria-hidden="true"></i>
-                  <i class="fa fa-circle" aria-hidden="true"></i>
-                  <i class="fa fa-circle" aria-hidden="true"></i>
-              </div>
-              <div class="contact-row">
-                  {{person.contact.street}} <br> {{person.contact.city}}
-              </div>
-              <div v-if="person.contact.github" class="contact-row dots">
-                  <i class="fa fa-circle" aria-hidden="true"></i>
-                  <i class="fa fa-circle" aria-hidden="true"></i>
-                  <i class="fa fa-circle" aria-hidden="true"></i>
-              </div>
-              <div v-if="person.contact.github" class="contact-row">
-                  <a :href="contactLinks.github">{{contactLinks.github}}</a>
-              </div>
-          </div>
+      <div class="middle">
+        <div class="left-col">
+            <div class="person-image">
+                <div class="image-centerer">
+                    <div class="img"></div>
+                </div>
+            </div>
+            <div class="contact">
+                <h3>{{ lang.contact }}</h3>
+                <div class="contact-row">
+                    <a :href="contactLinks.email">{{person.contact.email}}</a>
+                </div>
+                <div class="contact-row dots">
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                </div>
+                <div class="contact-row">
+                    <a :href="contactLinks.phone">{{person.contact.phone}}</a>
+                </div>
+                <div class="contact-row dots">
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                </div>
+                <div class="contact-row">
+                    {{person.contact.street}} <br> {{person.contact.city}}
+                </div>
+                <div v-if="person.contact.github" class="contact-row dots">
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                </div>
+                <div v-if="person.contact.github" class="contact-row">
+                    <a :href="contactLinks.github">{{contactLinks.github}}</a>
+                </div>
+            </div>
+        </div>
+        <div class="right-col">
+            <div class="experience">
+                <h3>{{ lang.experience }}</h3>
+                    <div class="experience-block" v-for="experience in person.experience" :key="experience.company">
+                        <div class="row">
+                            <span class="company"> {{experience.company}} -</span>
+                            <span class="job-title"> {{experience.position}} </span>
+                        </div>
+                        <div class="row">
+                            <span class="time-period"> {{experience.timeperiod}}</span>
+                        </div>
+                        <div class="job-description" v-for="description in experience.descriptions" :key="description.desc" >{{description.desc}}</div>
+                    </div>
+            </div>
+            <div class="education">
+                <h3>{{ lang.education }}</h3>
+                    <div class="education-block" v-for="education in person.education" :key="education.degree">
+                        <div class="row">
+                            <span class="degree">{{education.degree}}</span>
+                        </div>
+                        <div class="row">
+                            <span class="degree-description">{{education.description}}</span>
+                        </div>
+                        <div class="row">
+                            <span class="time-period"> {{education.timeperiod}}</span>
+                        </div>
+                        <div class="degree-description" v-for="description in education.descriptions" :key="description.desc" >{{description.desc}}</div>
+                    </div>
+            </div>
+            <div class="skills-block">
+                <h3>{{ lang.skills }}</h3>
+                <div class="skills">
+                        <div class="skill" v-for="skill in person.skills" :key="skill.name">
+                            <span class="skill-name">{{skill.name}}</span>
+                        </div>
+                </div>
+                <span class="skills-other"> {{person.knowledge}} </span>
+            </div>
+        </div>
       </div>
-      <div class="right-col">
-          <div class="experience">
-              <h3>{{ lang.experience }}</h3>
-                  <div class="experience-block" v-for="experience in person.experience" :key="experience.company">
-                      <div class="row">
-                          <span class="company"> {{experience.company}} -</span>
-                          <span class="job-title"> {{experience.position}} </span>
-                      </div>
-                      <div class="row">
-                          <span class="time-period"> {{experience.timeperiod}}</span>
-                      </div>
-                      <div class="row">
-                          <span class="job-description"> {{experience.description}} </span>
-                      </div>
-                  </div>
-          </div>
-          <div class="education">
-              <h3>{{ lang.education }}</h3>
-                  <div class="education-block" v-for="education in person.education" :key="education.degree">
-                      <div class="row">
-                          <span class="degree">{{education.degree}}</span>
-                      </div>
-                      <div class="row">
-                          <span class="degree-description">{{education.description}}</span>
-                      </div>
-                  </div>
-          </div>
-          <div class="skills-block">
-              <h3>{{ lang.skills }}</h3>
-              <div class="skills">
-                      <div class="skill" v-for="skill in person.skills" :key="skill.name">
-                          <span class="skill-name">{{skill.name}}</span>
-                      </div>
-              </div>
-              <span class="skills-other"> {{person.knowledge}} </span>
-          </div>
-      </div>
+      <!-- <div class="bottom-row" align="justify">
+      Wyrażam zgodę na przetwarzanie moich danych osobowych dla celów rekrutacji organizowanych przez EXATEL S.A. Podanie danych jest dobrowolne. Mogę cofnąć zgodę w każdym czasie. Administratorem danych jest EXATEL S.A. z siedzibą w Warszawie, ul. Perkuna 47. Dane mogą być przetwarzane pomimo cofnięcia zgody jeżeli ich przetwarzanie jest niezbędne do ustalenia, dochodzenia lub obrony roszczeń Administratora w związku z prowadzoną rekrutacją. Dane mogą zostać przekazane do odbiorców (upoważnionych na podstawie właściwych przepisów prawa lub związanych umową z Administratorem) jeżeli jest to niezbędne do przeprowadzenia procesu rekrutacji. Mam prawo dostępu do danych, sprostowania, usunięcia, ograniczenia przetwarzania, prawo wniesienia sprzeciwu, skargi do organu nadzorczego i przeniesienia danych. Szczegółowe informacje znajdują się na stronie exatel.pl, zakładka „Polityka Prywatności”.
+      </div> -->
   </div>
 
   </div>
@@ -111,9 +118,10 @@ export default Vue.component(name, getVueOptions(name));
     font-weight:400;
   }
   .top-row {
+    display:block;
     width:100%;
-    padding-top:100px;
-    padding-bottom:100px;
+    padding-top:50px;
+    padding-bottom:50px;
     span {
       width:100%;
       display:block;
@@ -129,11 +137,22 @@ export default Vue.component(name, getVueOptions(name));
       letter-spacing:5px;
     }
   }
+  .middle {
+    width:100%;
+    float:left;
+  }
+  .bottom-row {
+    float:left;
+    margin-top:20px;
+    padding:20px;
+    font-size:9px;
+  }
   .left-col {
+    display:inline-block;
     width:26%;
     float:left;
-    padding-left:8%;
-    padding-right:4%;
+    padding-left:6%;
+    padding-right:3%;
     .person-image .image-centerer {
       display:flex;
       justify-content:center;
@@ -171,10 +190,11 @@ export default Vue.component(name, getVueOptions(name));
     }
   }
   .right-col {
-    width:50%;
+    display:inline-block;
+    width:56%;
     float:right;
-    padding-left:4%;
-    padding-right:8%;
+    padding-left:3%;
+    padding-right:6%;
     .experience-block {
       margin-bottom:10px;
       .row:first-child {
@@ -187,9 +207,15 @@ export default Vue.component(name, getVueOptions(name));
       .row .job-title {
         font-size:19px;
       }
+      .row time-period {
+        font-size: 0.92rem;
+      }
+      .job-description{
+        font-size:0.92rem;
+      }
     }
     .education {
-      margin-top:50px;
+      margin-top:45px;
       .education-block {
         margin-bottom:10px;
         .degree {
@@ -197,10 +223,16 @@ export default Vue.component(name, getVueOptions(name));
           text-transform:uppercase;
           margin-bottom:3px;
         }
+        .row .time-period {
+          font-size: 0.92rem;
+        }
+        .degree-description {
+          font-size: 0.92rem;
+        }
       }
     }
     .skills-block {
-      margin-top:50px;
+      margin-top:45px;
       position:relative;
       .skills {
         margin-bottom:10px;
@@ -210,8 +242,8 @@ export default Vue.component(name, getVueOptions(name));
         margin-right:auto;
         display:inline-block;
         .skill {
-          width:80px;
-          height:80px;
+          width:70px;
+          height:70px;
           border-radius:50%;
           position:relative;
           border:#333333 1px solid;

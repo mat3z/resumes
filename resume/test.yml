@@ -17,56 +17,55 @@ experience:
   position: Frontend Developer
   timeperiod: Lipiec 2018 - obecnie
   descriptions: 
-   - desc: "- Tworzenie aplikacji webowych dla sektora finansowego korzystając z biblioteki ReactJS" 
+  -desc: "- Tworzenie aplikacji webowych dla sektora finansowego w oparciu o bibliotekę ReactJS" 
 
 - company: Samsung
   position: Trainee / Junior JavaScript Developer
   timeperiod: Październik 2016 - Sierpień 2017
   descriptions: 
-    - desc: "- Tworzenie aplikacji wspomagających prace zespołu"
-    - desc: "- Wdrażanie nowych funkcjonalności w projekcie WebPlayer"
+  - desc: "- Tworzenie aplikacji wspomagających prace zespołu" 
+  - desc: "- Wdrażanie nowych funkcjonalności w projekcie WebPlayer"
 
 education:
 - degree: Studia magisterskie
   timeperiod: Październik 2016 - obecnie
-  descriptions: 
-  - desc: "Politechnika Warszawska, Wydział EiTI, Telekomunikacja,"
-  - desc: temat pracy mgr. „Analiza metod rekomendowania filmów”
+  # description: Politechnika Warszawska, Wydział Elektroniki i Technik Informacyjnych, Telekomunikacja, temat pracy magisterskiej „Analiza metod rekomendowania filmów”
+  description: "- Tworzenie aplikacji wspomagających prace zespołu - Wdrażanie nowych funkcjonalności w projekcie WebPlayer"
   website: https://example.com
 
 - degree: Studia magisterskie, Erasmus
   timeperiod: Wrzesień 2017 - Luty 2018
-  descriptions:  
-  - desc: Universidad Miguel Hernández de Elche, Hiszpania,
-  - desc: Máster Universitario en Ingeniería de Telecomunicación
+  # description: Universidad Miguel Hernández de Elche, Hiszpania, Máster Universitario en Ingeniería de Telecomunicación
+  description: "- Tworzenie aplikacji wspomagających prace zespołu - Wdrażanie nowych funkcjonalności w projekcie WebPlayer"
+  website: https://example.com
 
 - degree: Studia inżynierskie
   timeperiod: Październik 2012 - Wrzesień 2016
-  descriptions: 
-    - desc: "Politechnika Warszawska, Wydział EiTI, Telekomunikacja,"
-    - desc: temat pracy inż. „Internetowy serwis wideo na żądanie”
-
+  description: "- Tworzenie aplikacji wspomagających prace zespołu - Wdrażanie nowych funkcjonalności w projekcie WebPlayer"
+  # description: Politechnika Warszawska, Wydział Elektroniki i Technik Informacyjnych, Telekomunikacja, temat pracy inżynierskiej „Internetowy serwis wideo na żądanie”
 # skill level goes 0 to 100
 skills:
-- name: JavaScript
-  level: 97
-- name: ReactJS
-  level: 60
-- name: Redux
-  level: 80
 - name: HTML5
   level: 99
 - name: CSS3
   level: 95
+- name: JavaScript
+  level: 97
 - name: Node.js
   level: 93
+- name: ReactJS
+  level: 60
+- name: Redux
+  level: 80
 - name: Python
   level: 80
-- name: Jęz. angielski C1
+- name: Jęz. angielski / C1
   level: 80
-- name: Jęz. hiszpański A2
+- name: Jęz. hiszpański / A2
   level: 80
-knowledge: Interesuję się piłką nożną, komiksami i kulturą hiszpańską.
+knowledge: Also proficient in Adobe Photoshop and Illustrator, grew up bilingual
+  (English and Klingon).
+knowledge: Znajomość języka angielskiego na poziomie C1
 
 projects:
 - name: best-resume-ever
@@ -83,9 +82,9 @@ hobbies:
   iconClass: fa fa-futbol-o
   url: https://example.com
 
-- name: Kultura hiszpańska
-  iconClass: fa fa-flag
-  url: https://example.com
+# - name: Kultura hiszpańska
+#   iconClass: fa fa-flag
+#   url: https://example.com
 
 contributions:
 - name: best-resume-ever
